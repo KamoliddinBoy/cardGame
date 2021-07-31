@@ -1,0 +1,68 @@
+
+
+body {
+  font-family: 'Varela Round', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 480px;perspective: 1000px;
+}
+
+.card {
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    margin: 10px;
+    height: 100px;
+    width: 100px;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    transition: transform 0.4s linear;
+}
+
+.card .front,
+.card .back {
+    background-color: #fff;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+ .card.show {
+     transform: rotateY(0deg);
+ }
+.card .front {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.card .back {
+    transform: rotateY(180deg);
+}
+
+.card i {
+    font-size: 30px;
+}
+
